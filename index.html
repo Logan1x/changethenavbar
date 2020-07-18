@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Navbar</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="nav.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // for red logo
+            document.querySelector("#logo").onclick = function() {
+                document.querySelector("#companylogo").innerHTML = document.querySelector("#logotext").value;
+                document.querySelector("#logotext").value = '';
+            };
+
+            // for red home
+            document.querySelector("#home").onclick = function() {
+                document.querySelector("#homename").innerHTML = document.querySelector("#hometext").value;
+                document.querySelector("#logotext").value = '';
+            };
+
+            // for red blog
+            document.querySelector("#blog").onclick = function() {
+                document.querySelector("#blogname").innerHTML = document.querySelector("#blogtext").value;
+                document.querySelector("#logotext").value = '';
+            };
+
+            // for red docs
+            document.querySelector("#docs").onclick = function() {
+                document.querySelector("#docsname").innerHTML = document.querySelector("#docstext").value;
+                document.querySelector("#logotext").value = '';
+            };
+
+            // for red navbar
+            document.querySelector("#color").onclick = function() {
+                document.querySelector(".navbar").style.background = document.querySelector("#favcolor").value;
+            };
+
+            // for red font
+            document.querySelector("#font").onclick = function() {
+                document.querySelector(".navbar").style.color = document.querySelector("#fontcolor").value;
+            };
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="container text-center">
+                <h1>Change The Navbar</h1>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="nav-link logo" id="companylogo" href="#">Logo</a>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto color">
+                            <li class="nav-item active">
+                                <a class="nav-link" id="homename" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="blogname" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="docsname" href="#">Docs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-muted">Logo</p>
+                        <input id="logotext" type="text" class="form-control">
+                        <button id="logo" type="button" class="btn btn-info m-4">done</button>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted">Home</p>
+                        <input id="hometext" type="text" class="form-control">
+                        <button id="home" type="button" class="btn btn-info m-4">done</button>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted">Blog</p>
+                        <input id="blogtext" type="text" class="form-control">
+                        <button id="blog" type="button" class="btn btn-info m-4">done</button>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted">Docs</p>
+                        <input id="docstext" type="text" class="form-control">
+                        <button id="docs" type="button" class="btn btn-info m-4">done</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container m-5">
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="favcolor">Select color for navbar background :</label>
+                        <input type="color" id="favcolor" name="favcolor" value="#ff0000" class="form-control">
+                        <button id="color" type="button" class="btn btn-info m-4">done</button>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="favcolor">Select font color :</label>
+                        <input type="color" id="fontcolor" name="favcolor" value="#ff0000" class="form-control">
+                        <button id="font" type="button" class="btn btn-info m-4">done</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+</body>
+
+</html>
